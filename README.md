@@ -1,70 +1,69 @@
-# Getting Started with Create React App
+# Backpack Flight Scheduler
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern flight date picker built with React and Skyscanner's Backpack design system.
+
+## Features
+
+- 📅 Interactive calendar with month navigation
+- ✅ Date selection with validation
+- 🎨 Beautiful gradient UI with Backpack design system
+- 🔔 Toast notifications for user feedback
+- 📱 Responsive and fits viewport perfectly
+- ⚡ Smooth animations and transitions
+
+## Tech Stack
+
+- React 18
+- Skyscanner Backpack Web Components
+- CSS3 with gradients and animations
+- Jest for testing
+
+## Installation
+
+```bash
+npm install --legacy-peer-deps
+```
 
 ## Available Scripts
 
-In the project directory, you can run:
-
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Runs the app in development mode at [http://localhost:3000](http://localhost:3000)
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Launches the test runner
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Builds the app for production
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Project Structure
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+src/
+├── App.js          # Main component with calendar logic
+├── App.css         # Styling with gradients and animations
+├── App.test.js     # Unit tests
+└── index.js        # Entry point with Backpack styles
+```
 
-### `npm run eject`
+## Features Implemented
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+✅ Flight Schedule header  
+✅ Custom calendar component  
+✅ Month navigation (prev/next)  
+✅ Date selection functionality  
+✅ Backpack Continue button  
+✅ Form validation (date required)  
+✅ Toast notifications (success/error)  
+✅ Responsive design  
+✅ Smooth animations  
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Built for
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Skyscanner Software Engineering Virtual Experience - Task 1
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Made with ❤️ using Skyscanner's Backpack
