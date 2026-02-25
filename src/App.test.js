@@ -1,8 +1,14 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+jest.mock('@skyscanner/backpack-web/bpk-component-button', () => {
+  return function MockButton({ children, ...props }) {
+    return <button {...props}>{children}</button>;
+  };
+});
+
+test('renders without crashing', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const headerElement = screen.getByText(/Flight Schedule/i);
+  expect(headerElement).toBeInTheDocument();
 });

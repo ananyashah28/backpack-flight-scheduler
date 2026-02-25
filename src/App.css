@@ -1,38 +1,192 @@
 .App {
+  height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  overflow: hidden;
+}
+
+.container {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  max-width: 450px;
+  width: 100%;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App h1 {
+  margin: 0 0 4px 0;
+  color: #161616;
+  font-size: 24px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.selected-date-display {
+  color: #0770e3;
+  font-size: 12px;
+  margin: 4px 0 8px 0;
+  font-weight: 500;
+  min-height: 16px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.calendar {
+  background: linear-gradient(135deg, #ffffff 0%, #f0f4f8 100%);
+  border-radius: 12px;
+  padding: 12px;
+  margin: 8px 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(7, 112, 227, 0.1);
+}
+
+.calendar-header {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #e8eef5;
+}
+
+.nav-button {
+  background: linear-gradient(135deg, #0770e3 0%, #0557b8 100%);
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.3s;
+  box-shadow: 0 4px 12px rgba(7, 112, 227, 0.3);
+  min-width: 36px;
+}
+
+.nav-button:hover {
+  background: linear-gradient(135deg, #0557b8 0%, #043d82 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(7, 112, 227, 0.4);
+}
+
+.nav-button:active {
+  transform: translateY(0);
+}
+
+.month-year {
+  font-size: 16px;
+  font-weight: 700;
+  color: #05203c;
+  letter-spacing: 0.5px;
+  text-transform: capitalize;
+}
+
+.calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  margin-bottom: 6px;
+  font-weight: 700;
+  color: #0770e3;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.calendar-day {
+  aspect-ratio: 1;
+  border: 2px solid #e8eef5;
+  background: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.calendar-day::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #0770e3 0%, #05a5cc 100%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 0;
+}
+
+.calendar-day:hover:not(.empty) {
+  border-color: #0770e3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(7, 112, 227, 0.25);
+}
+
+.calendar-day:hover:not(.empty)::before {
+  opacity: 0.1;
+}
+
+.calendar-day.selected {
+  background: linear-gradient(135deg, #0770e3 0%, #05a5cc 100%);
   color: white;
+  border-color: #0770e3;
+  font-weight: 700;
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(7, 112, 227, 0.4);
 }
 
-.App-link {
-  color: #61dafb;
+.calendar-day.selected::before {
+  opacity: 0;
 }
 
-@keyframes App-logo-spin {
+.calendar-day.empty {
+  border: none;
+  cursor: default;
+  background: transparent;
+}
+
+.App button[class*="bpk"] {
+  margin-top: 8px;
+}
+
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #00a698;
+  color: white;
+  padding: 16px 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  font-weight: 500;
+  animation: slideIn 0.3s ease;
+  z-index: 1000;
+}
+
+.toast.error {
+  background: #e74c3c;
+}
+
+@keyframes slideIn {
   from {
-    transform: rotate(0deg);
+    right: -300px;
+    opacity: 0;
   }
   to {
-    transform: rotate(360deg);
+    right: 20px;
+    opacity: 1;
   }
 }
